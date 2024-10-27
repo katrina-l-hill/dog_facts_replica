@@ -8,19 +8,29 @@ const app = express();
 
 app.get('/facts', (req, res) => {
     const number = parseInt(req.query.number);
-    if (number !== undefined) {
-        number = parseInt(number, 10);
-        if (isNaN(number) || number < 1) {
-          return res.status(400).json({ message: "Invalid number parameter", success: false });
-        }
-        return res.json({ facts: dogFacts.slice(0, number), success: true });
-      }
     
-      res.json({ facts: dogFacts, success: true });
+    if (req.query.number !== undefined) {
+        if (isNaN(number) || number < 1) {
+            return res.status(400).json({
+                message: 'Invalid number parameter',
+                success: false
+            });
+        }
+    }
+
+    const facts = number ? dogFacts.slice(0, number) : dogFacts;
+    return res.status(200).json({
+        facts,
+        success: true
     });
+});
 
 app.use((req, res) => {
-    res.status(404).json({message: 'Not Found', success: false});
+    res.status(404).json({
+        message: 'Not Found',
+        success: false
+    });
 });
 
 export default app;
+
