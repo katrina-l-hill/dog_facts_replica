@@ -12,3 +12,4 @@ Challenges faced include
 - Open DevMatch
 - Open online IDE or desktop IDE
 - Clone repo: https://git.devmatch.xyz/76792b2e-0c2b-4c03-a65a-59135bc12613.git
+- Run `node server.js`
