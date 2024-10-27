@@ -1,8 +1,8 @@
 // app.js
 
 // Add your code here
-const express = require("express");
-const dogFacts = require("./dog_facts");
+import express from "express";
+import dogFacts from "./dog_facts.js";
 
 const app = express();
 

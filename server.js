@@ -1,7 +1,7 @@
 // server.js
 
 // Add your code here
-const app = require("./app");
+import app from "./app.js";
 
 const port = 3000;
 
