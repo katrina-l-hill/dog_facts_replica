@@ -6,7 +6,7 @@ const dogFacts = require("./dog_facts");
 const app = express();
 
 app.get('/facts', (req, res) => {
-    const { number } = parseInt(req.query.number);
+    const number = parseInt(req.query.number);
     if (isNaN(number) || number < 1) {
         return res.status(400).json({message: 'Invalid number parameter', success: false});
     }
